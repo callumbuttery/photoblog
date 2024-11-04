@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
 				<RouterLink className="btn btn-ghost text-xl" to={"/"}>
 					Home
 				</RouterLink>
-				<RouterLink className="btn btn-ghost text-xl" to={"/Blog"}>
+				<RouterLink className="btn btn-ghost text-xl" to={"/blog"}>
 					Blog
 				</RouterLink>
 			</div>

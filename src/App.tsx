@@ -11,7 +11,8 @@ function App() {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />}></Route>
-						<Route path="/Blog" element={<BlogList />}></Route>
+						<Route path="/blog" element={<BlogList />}></Route>
+						<Route path="/blogDetails/:id" element={<div>404</div>}></Route>
 					</Routes>
 				</BrowserRouter>
 			</div>
