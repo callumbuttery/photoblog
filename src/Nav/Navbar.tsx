@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
 	const [theme, setTheme] = React.useState("dark");
@@ -13,7 +14,12 @@ export const Navbar: React.FC = () => {
 	return (
 		<div className="navbar bg-base-100">
 			<div className="flex-1">
-				<a className="btn btn-ghost text-xl">daisyUI</a>
+				<RouterLink className="btn btn-ghost text-xl" to={"/"}>
+					daisyUI
+				</RouterLink>
+				<RouterLink className="btn btn-ghost text-xl" to={"/Blog"}>
+					daisyUI
+				</RouterLink>
 			</div>
 			<div className="flex-none">
 				<input
