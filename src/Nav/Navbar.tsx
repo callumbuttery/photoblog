@@ -15,10 +15,10 @@ export const Navbar: React.FC = () => {
 		<div className="navbar bg-base-100">
 			<div className="flex-1">
 				<RouterLink className="btn btn-ghost text-xl" to={"/"}>
-					daisyUI
+					Home
 				</RouterLink>
 				<RouterLink className="btn btn-ghost text-xl" to={"/Blog"}>
-					daisyUI
+					Blog
 				</RouterLink>
 			</div>
 			<div className="flex-none">
