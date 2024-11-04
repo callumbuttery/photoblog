@@ -7,5 +7,10 @@ export default {
     './Pages/**/*.tsx',
   ],
   theme: {},
-  plugins: [],
+  plugins: [
+    require('daisyui')
+  ],
+  daisyui: {
+    themes: ['light', 'dark'],
+  }
 }
