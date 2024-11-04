@@ -8,8 +8,7 @@ export const getAllEntries = async () => {
 		});
 		const entries = await client.getEntries();
 
-		if (entries.items) return entries.items;
-		else throw new Error("Error getting entries");
+		return entries.items;
 	} catch (error) {
 		console.error(error);
 		return [];
