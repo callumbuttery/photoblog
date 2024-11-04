@@ -17,7 +17,7 @@ export const BlogList: React.FC = () => {
 
 	return (
 		<div className="flex justify-center mt-48">
-			{!blogs.length ? (
+			{blogs.length ? (
 				<div className="card lg:card-side bg-base-100 shadow-2xl">
 					<figure>
 						<img
