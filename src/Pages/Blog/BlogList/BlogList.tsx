@@ -27,11 +27,13 @@ export const BlogList: React.FC = () => {
 					<div key={blog.sys.id} className="flex justify-center mt-16">
 						<div className="card lg:card-side bg-base-100 shadow-2xl h-fit mx-auto w-full">
 							<figure className="max-w-lg max-h-96">
-								<img
-									src={blog.fields.blogImage.fields.file.url}
-									alt="Album"
-									className="object-contain"
-								/>
+								{blog.fields.blogImage && (
+									<img
+										src={blog.fields.blogImage.fields.file.url}
+										alt="Album"
+										className="object-contain"
+									/>
+								)}
 							</figure>
 							<div className="w-96 p-4 flex flex-col">
 								<h3 className="card-title text-2xl">{blog.fields.blogTitle}</h3>
