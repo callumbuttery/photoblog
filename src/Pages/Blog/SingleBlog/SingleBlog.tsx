@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { createContentfulClient } from "../../../api/helpers";
 import { useEffect, useState } from "react";
 import { BlogFields } from "../BlogList/types";
+import { Carousel } from "./components";
 
 // Type guard to ensure entry.fields matches BlogFields
 function isBlogFields(fields: any): fields is BlogFields {
@@ -51,9 +52,14 @@ export const SingleBlog: React.FC = () => {
 						<p>
 							<strong>TLDR:</strong> {blog.blogSummary}
 						</p>
+						{blog.blogImages.length && (
+							<div className="flex justify-center my-24">
+								<Carousel images={blog.blogImages} />
+							</div>
+						)}
 					</div>
 					<div>
-						<p>{blog.postContent}</p>
+						<p className="whitespace-pre-wrap">{blog.postContent}</p>
 					</div>
 				</div>
 			) : (
