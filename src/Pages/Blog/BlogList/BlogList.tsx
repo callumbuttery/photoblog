@@ -29,8 +29,8 @@ export const BlogList: React.FC = () => {
 			{blogs.length ? (
 				blogs.map((blog: Blog) => (
 					<div key={blog.sys.id} className="flex justify-center mt-16">
-						<div className="card lg:card-side bg-base-100 shadow-3xl h-96 mx-auto w-full">
-							<figure className="max-w-lg max-h-96">
+						<div className="card lg:card-side bg-base-100 shadow-3xl h-96 mx-auto w-full hover:scale-105">
+							<figure className="max-w-lg max-h-96 pointer-events-none">
 								{blog.fields.blogImage && (
 									<img
 										src={blog.fields.blogImage.fields.file.url}
