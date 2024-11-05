@@ -2,7 +2,7 @@ import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
-	const [theme, setTheme] = React.useState("dark");
+	const [theme, setTheme] = React.useState("light");
 	const toggleTheme = () => {
 		setTheme(theme === "dark" ? "light" : "dark");
 	};
