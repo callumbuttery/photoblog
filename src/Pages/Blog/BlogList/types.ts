@@ -3,10 +3,11 @@ export interface Blog {
 	sys: SystemInfo;
 }
 
-interface BlogFields {
+export interface BlogFields {
 	blogAuthor: string;
 	blogDate: string; // ISO date string, could use Date if parsed on fetch
 	blogImage: BlogImage;
+	blogImages: [BlogImage];
 	blogSummary: string;
 	blogTitle: string;
 	postContent: string;
@@ -16,6 +17,10 @@ interface BlogFields {
 interface BlogImage {
 	sys: SystemInfo;
 	fields: ImageField;
+	metadata: {
+		concepts: [];
+		tags: [];
+	};
 }
 
 interface ImageFileDetails {

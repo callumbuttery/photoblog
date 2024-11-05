@@ -7,7 +7,7 @@ import { Link as RouterLink } from "react-router-dom";
 export const BlogList: React.FC = () => {
 	const [blogs, setBlogs] = useState<any[]>([]);
 
-	const truncate = (input: string) =>
+	const truncate = (input: string): string =>
 		input.length > 200 ? `${input.substring(0, 200)}...` : input;
 
 	useEffect(() => {
