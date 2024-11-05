@@ -14,7 +14,7 @@ export interface BlogFields {
 	publish: boolean;
 }
 
-interface BlogImage {
+export interface BlogImage {
 	sys: SystemInfo;
 	fields: ImageField;
 	metadata: {

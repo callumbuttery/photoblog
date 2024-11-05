@@ -30,8 +30,6 @@ export const SingleBlog: React.FC = () => {
 			entry.fields && isBlogFields(entry.fields)
 				? setBlog(entry.fields)
 				: console.error("Fetched data is not of type BlogFields");
-
-			console.log(blog);
 		};
 
 		fetchEntry();

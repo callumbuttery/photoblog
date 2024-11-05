@@ -3,12 +3,10 @@ import { getAllEntries } from "../../../api/contentful/getAllEntries";
 import { BlogLoadingSkeleton } from ".";
 import { Blog } from "./types";
 import { Link as RouterLink } from "react-router-dom";
+import { truncate } from "../../helpers";
 
 export const BlogList: React.FC = () => {
 	const [blogs, setBlogs] = useState<any[]>([]);
-
-	const truncate = (input: string): string =>
-		input.length > 200 ? `${input.substring(0, 200)}...` : input;
 
 	useEffect(() => {
 		const fetchEntries = async () => {
