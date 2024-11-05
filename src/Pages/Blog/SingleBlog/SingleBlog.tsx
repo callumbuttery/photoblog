@@ -35,7 +35,7 @@ export const SingleBlog: React.FC = () => {
 		};
 
 		fetchEntry();
-	}, [id]);
+	}, []);
 
 	return (
 		<div className="w-10/12 flex flex-col mx-auto">
