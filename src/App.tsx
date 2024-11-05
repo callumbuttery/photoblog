@@ -7,7 +7,7 @@ import { SingleBlog } from "./Pages/Blog/SingleBlog";
 function App() {
 	return (
 		<>
-			<div className="w-3/4 mx-auto my-5">
+			<div className="w-2/4 mx-auto m-10">
 				<BrowserRouter>
 					<Navbar />
 					<Routes>
