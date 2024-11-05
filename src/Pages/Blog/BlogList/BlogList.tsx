@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllEntries } from "../../../api/contentful/getAllEntries";
 import { BlogLoadingSkeleton } from ".";
 import { Blog } from "./types";
+import { Link as RouterLink } from "react-router-dom";
 
 export const BlogList: React.FC = () => {
 	const [blogs, setBlogs] = useState<any[]>([]);
@@ -46,7 +47,9 @@ export const BlogList: React.FC = () => {
 									<p>{blog.fields.blogDate}</p>
 									<p>{blog.fields.blogAuthor}</p>
 									<div className="card-actions justify-center mt-3">
-										<button className="btn btn-primary">View</button>
+										<RouterLink to={`/blogDetails/${blog.sys.id}`}>
+											<button className="btn btn-primary">View</button>
+										</RouterLink>
 									</div>
 								</div>
 							</div>

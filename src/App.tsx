@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./Nav/Navbar";
 import { BlogList } from "./Pages/Blog/BlogList";
 import { Home } from "./Pages/Home";
+import { SingleBlog } from "./Pages/Blog/SingleBlog";
 
 function App() {
 	return (
@@ -12,7 +13,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />}></Route>
 						<Route path="/blog" element={<BlogList />}></Route>
-						<Route path="/blogDetails/:id" element={<div>404</div>}></Route>
+						<Route path="/blogDetails/:id" element={<SingleBlog />}></Route>
 					</Routes>
 				</BrowserRouter>
 			</div>
