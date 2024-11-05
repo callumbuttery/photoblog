@@ -1,7 +1,6 @@
 import { BlogImage } from "../../BlogList/types";
 
 export const Carousel: React.FC<{ images: BlogImage[] }> = ({ images }) => {
-	console.log({ images });
 	if (!images?.length) return null;
 	return (
 		<div className="carousel carousel-center rounded-box h-4/12 border">
