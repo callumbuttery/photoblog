@@ -1,11 +1,8 @@
-import { createClient } from "contentful";
+import { createContentfulClient } from "../helpers/createContentfulClient";
 
 export const getAllEntries = async () => {
 	try {
-		const client = createClient({
-			space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
-			accessToken: import.meta.env.VITE_CONTENTFUL_API_KEY,
-		});
+		const client = createContentfulClient;
 		const entries = await client.getEntries();
 
 		return entries.items;
