@@ -43,12 +43,12 @@ export const SingleBlog: React.FC = () => {
 					<h1 className="flex justify-start text-4xl font-bold mt-24">
 						{blog.blogTitle}
 					</h1>
-					<div className="my-5">
+					<div className="my-5 text-xl">
 						<p>By: {blog.blogAuthor}</p>
 						<p>Date: {blog.blogDate}</p>
 					</div>
 					<div className="divider"></div>
-					<div className="my-10">
+					<div className="my-10 text-xl">
 						<p>
 							<strong>TLDR:</strong> {blog.blogSummary}
 						</p>
@@ -59,7 +59,7 @@ export const SingleBlog: React.FC = () => {
 						)}
 					</div>
 					<div>
-						<p className="whitespace-pre-wrap">{blog.postContent}</p>
+						<p className="whitespace-pre-wrap text-lg">{blog.postContent}</p>
 					</div>
 				</div>
 			) : (
