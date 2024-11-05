@@ -6,6 +6,9 @@ import { Blog } from "./types";
 export const BlogList: React.FC = () => {
 	const [blogs, setBlogs] = useState<any[]>([]);
 
+	const truncate = (input: string) =>
+		input.length > 200 ? `${input.substring(0, 200)}...` : input;
+
 	useEffect(() => {
 		const fetchEntries = async () => {
 			const entries = await getAllEntries();
@@ -25,19 +28,20 @@ export const BlogList: React.FC = () => {
 			{blogs.length ? (
 				blogs.map((blog: Blog) => (
 					<div key={blog.sys.id} className="flex justify-center mt-16">
-						<div className="card lg:card-side bg-base-100 shadow-2xl h-fit mx-auto w-full">
+						<div className="card lg:card-side bg-base-100 shadow-3xl h-96 mx-auto w-full">
 							<figure className="max-w-lg max-h-96">
 								{blog.fields.blogImage && (
 									<img
 										src={blog.fields.blogImage.fields.file.url}
 										alt="Album"
-										className="object-contain"
 									/>
 								)}
 							</figure>
 							<div className="w-96 p-4 flex flex-col">
 								<h3 className="card-title text-2xl">{blog.fields.blogTitle}</h3>
-								<p className="mt-2 text-lg">{blog.fields.blogSummary}</p>
+								<p className="mt-2 text-lg">
+									{truncate(blog.fields.blogSummary)}
+								</p>
 								<div className="mt-auto mb-2">
 									<p>{blog.fields.blogDate}</p>
 									<p>{blog.fields.blogAuthor}</p>
