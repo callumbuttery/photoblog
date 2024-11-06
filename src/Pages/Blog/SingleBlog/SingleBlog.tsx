@@ -1,36 +1,19 @@
 import { useParams } from "react-router-dom";
-import { createContentfulClient } from "../../../api/helpers";
 import { useEffect, useState } from "react";
 import { BlogFields } from "../BlogList/types";
 import { Carousel } from "./components";
-
-// Type guard to ensure entry.fields matches BlogFields
-function isBlogFields(fields: any): fields is BlogFields {
-	return (
-		fields.blogAuthor &&
-		fields.blogDate &&
-		fields.blogImage &&
-		fields.blogSummary &&
-		fields.blogTitle &&
-		fields.postContent &&
-		fields.publish !== undefined
-	);
-}
+import { getSingleEntry } from "../../../api/contentful/getSingleEntry";
 
 export const SingleBlog: React.FC = () => {
-	const contentfulClient = createContentfulClient;
 	const { id } = useParams<{ id: string }>();
-
 	const [blog, setBlog] = useState<BlogFields | undefined>(undefined);
 
 	useEffect(() => {
 		const fetchEntry = async () => {
 			if (!id) return {};
-			const entry = await contentfulClient.getEntry(id);
 
-			entry.fields && isBlogFields(entry.fields)
-				? setBlog(entry.fields)
-				: console.error("Fetched data is not of type BlogFields");
+			const entry = await getSingleEntry(id);
+			setBlog(entry);
 		};
 
 		fetchEntry();
