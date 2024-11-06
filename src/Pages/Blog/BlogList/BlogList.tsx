@@ -3,7 +3,7 @@ import { getAllEntries } from "../../../api/contentful/getAllEntries";
 import { BlogLoadingSkeleton } from ".";
 import { Blog } from "./types";
 import { Link as RouterLink } from "react-router-dom";
-import { truncate } from "../../helpers";
+import { formatDate, truncate } from "../../helpers";
 
 export const BlogList: React.FC = () => {
 	const [blogs, setBlogs] = useState<any[]>([]);
@@ -42,7 +42,7 @@ export const BlogList: React.FC = () => {
 									{truncate(blog.fields.blogSummary)}
 								</p>
 								<div className="mt-auto mb-2">
-									<p>{blog.fields.blogDate}</p>
+									<p>{formatDate(blog.fields.blogDate)}</p>
 									<p>{blog.fields.blogAuthor}</p>
 									<div className="card-actions justify-center mt-3">
 										<RouterLink to={`/blogDetails/${blog.sys.id}`}>

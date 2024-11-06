@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BlogFields } from "../BlogList/types";
 import { Carousel } from "./components";
 import { getSingleEntry } from "../../../api/contentful/getSingleEntry";
+import { formatDate } from "../../helpers";
 
 export const SingleBlog: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
@@ -28,7 +29,7 @@ export const SingleBlog: React.FC = () => {
 					</h1>
 					<div className="my-5 text-xl">
 						<p>By: {blog.blogAuthor}</p>
-						<p>Date: {blog.blogDate}</p>
+						<p>Date: {formatDate(blog.blogDate)}</p>
 						<p className="mt-14">
 							<strong>TLDR:</strong> {blog.blogSummary}
 						</p>
