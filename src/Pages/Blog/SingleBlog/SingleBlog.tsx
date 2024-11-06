@@ -46,13 +46,13 @@ export const SingleBlog: React.FC = () => {
 					<div className="my-5 text-xl">
 						<p>By: {blog.blogAuthor}</p>
 						<p>Date: {blog.blogDate}</p>
+						<p className="mt-14">
+							<strong>TLDR:</strong> {blog.blogSummary}
+						</p>
 					</div>
 					<div className="divider"></div>
 					<div className="my-10 text-xl">
-						<p>
-							<strong>TLDR:</strong> {blog.blogSummary}
-						</p>
-						{blog.blogImages.length && (
+						{blog.blogImages?.length && (
 							<div className="flex justify-center my-24">
 								<Carousel images={blog.blogImages} />
 							</div>
