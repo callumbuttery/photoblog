@@ -5,7 +5,7 @@ import me from "../../assets/me.jpg";
 export const About: React.FC = () => {
 	return (
 		<div className="flex flex-col h-96 mt-24">
-			<div className="flex m-auto gap-4">
+			<div className="flex m-auto gap-4 shadow-3xl p-24 rounded-xl">
 				<img alt="Logo" src={me} className="rounded-full w-24 h-28" />
 				<div className="flex flex-col gap-2">
 					<h3 className="font-bold">Callum Buttery</h3>
